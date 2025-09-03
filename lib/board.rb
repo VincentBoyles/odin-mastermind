@@ -1,3 +1,5 @@
+require_relative 'players'
+
 class Board
   attr_accessor :board, :color_cords, :hint_cords, :secret_cords
 
