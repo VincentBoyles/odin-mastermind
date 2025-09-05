@@ -26,7 +26,3 @@ class HumanPlayer
     end
   end
 end
-
-player1 = HumanPlayer.new
-player1.set_name
-player1.set_choice
