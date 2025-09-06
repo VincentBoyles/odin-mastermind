@@ -3,12 +3,13 @@ require_relative 'players'
 require_relative 'computer'
 
 class Board
-  attr_accessor :board, :color_cords, :hint_cords, :secret_cords
+  attr_accessor :board, :color_cords, :hint_cords, :secret_cords, :row
 
   def initialize
     @color_cords = Array.new(8) { Array.new(4, '---') }
     @hint_cords = Array.new(8) { Array.new(4, '+') }
     @secret_cords = Array.new(4, 'UNK')
+    @row = 0
   end
 
   def show_board
@@ -75,16 +76,11 @@ class Board
   end
 
   def place_color
-    x = 0
-    y = 0
+    cell = 0
     4.times do
-      color_cords[x][y] = choose_color
+      color_cords[row][cell] = choose_color
       y += 1
     end
-    x += 1
+    self.row += 1
   end
 end
-
-board1 = Board.new
-board1.place_color
-puts board1.show_board
