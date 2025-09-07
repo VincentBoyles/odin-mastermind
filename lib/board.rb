@@ -3,13 +3,14 @@ require_relative 'players'
 require_relative 'computer'
 
 class Board
-  attr_accessor :board, :color_cords, :hint_cords, :secret_cords, :row
+  attr_accessor :board, :color_cords, :hint_cords, :secret_cords, :row, :code
 
   def initialize
     @color_cords = Array.new(8) { Array.new(4, '---') }
     @hint_cords = Array.new(8) { Array.new(4, '+') }
     @secret_cords = Array.new(4, 'UNK')
     @row = 0
+    @code = []
   end
 
   def show_board
@@ -47,6 +48,15 @@ class Board
       "
   end
 
+  def create_secret
+    puts 'Create a secret code: '
+    cell = 0
+    4.times do
+      code.push(choose_color)
+      cell += 1
+    end
+  end
+
   def choose_color
     input = 0
     until [1, 2, 3, 4, 5, 6].include?(input)
@@ -79,8 +89,20 @@ class Board
     cell = 0
     4.times do
       color_cords[row][cell] = choose_color
-      y += 1
+      cell += 1
     end
     self.row += 1
   end
+
+  def assesment
+    color_cords[row - 1].each do |cell|
+      puts 'hey!' if code.include?(cell)
+    end
+  end
 end
+
+board1 = Board.new
+board1.create_secret
+board1.place_color
+puts board1.show_board
+board1.assesment
