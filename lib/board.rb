@@ -49,8 +49,8 @@ class Board
   end
 
   def create_secret
-    puts 'Create a secret code: '
     cell = 0
+    puts 'Create a secret code using numbers from 1 to 6: '
     4.times do
       code.push(choose_color)
       cell += 1
@@ -60,7 +60,6 @@ class Board
   def choose_color
     input = 0
     until [1, 2, 3, 4, 5, 6].include?(input)
-      puts 'Enter a number for a color: '
       puts '1 for BLUE'.blue
       puts '2 for GREEN'.green
       puts '3 for CYAN'.cyan
@@ -88,6 +87,7 @@ class Board
   def place_color
     cell = 0
     4.times do
+      puts "Enter only a number from 1 to 6 for a color to be placed on #{cell + 1} color peg."
       color_cords[row][cell] = choose_color
       cell += 1
     end
@@ -95,8 +95,15 @@ class Board
   end
 
   def assesment
-    color_cords[row - 1].each do |cell|
-      puts 'hey!' if code.include?(cell)
+    cell = 0
+    color_cords[row - 1].each_with_index do |peg, index|
+      if peg == code[index]
+        hint_cords[row - 1][cell] = 'O'.green
+        cell += 1
+      elsif code.include?(peg)
+        hint_cords[row - 1][cell] = 'O'.red
+        cell += 1
+      end
     end
   end
 end
@@ -104,5 +111,5 @@ end
 board1 = Board.new
 board1.create_secret
 board1.place_color
-puts board1.show_board
 board1.assesment
+puts board1.show_board
