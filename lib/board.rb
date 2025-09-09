@@ -57,6 +57,14 @@ class Board
     end
   end
 
+  def computer_secret
+    cell = 0
+    4.times do
+      code.push(['BLU'.blue, 'GRE'.green, 'CYA'.cyan, 'RED'.red, 'MAG'.magenta, 'YEL'.yellow].sample)
+      cell += 1
+    end
+  end
+
   def choose_color
     input = 0
     until [1, 2, 3, 4, 5, 6].include?(input)
@@ -87,7 +95,7 @@ class Board
   def place_color
     cell = 0
     4.times do
-      puts "Enter only a number from 1 to 6 for a color to be placed on #{cell + 1} color peg."
+      puts "Enter only a number from 1 to 6 for a color to be placed on gameboard row[#{row + 1}] cell[#{cell + 1}]."
       color_cords[row][cell] = choose_color
       cell += 1
     end
@@ -107,9 +115,3 @@ class Board
     end
   end
 end
-
-board1 = Board.new
-board1.create_secret
-board1.place_color
-board1.assesment
-puts board1.show_board

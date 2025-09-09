@@ -3,7 +3,7 @@ class HumanPlayer
 
   def initialize
     @name = ''
-    @choice = 0
+    @choice = ''
   end
 
   def set_name
@@ -18,11 +18,16 @@ class HumanPlayer
   def set_choice
     input = 0
     until [1, 2].include?(input)
-      puts 'Would you like to be the codemaker or codebreaker?'
-      puts 'Enter 1 for codemaker'
-      puts 'Enter 2 for codemaker'
-      input = gets.chomp
-      self.choice = input
+      puts 'Would you like to be the Code Maker or Code Breaker?'
+      puts 'Enter 1 for Code Breaker'
+      puts 'Enter 2 for Code Maker'
+      input = gets.chomp.to_i
+    end
+    case input
+    when 1
+      self.choice = 'Code Breaker'
+    when 2
+      self.choice = 'Code Maker'
     end
   end
 end

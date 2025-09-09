@@ -1,12 +1,16 @@
-class Computer
+class ComputerPlayer
   attr_accessor :name, :choice
 
   def initialize
     @name = 'Computer'
-    @choice = 0
+    @choice = ''
   end
 
-  def computer_choice(player_choice)
-    2 unless player_choice == 1
+  def computer_choice(choice)
+    self.choice = if choice == 'Code Maker'
+                    'Code Breaker'
+                  else
+                    'Code Maker'
+                  end
   end
 end
