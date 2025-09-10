@@ -39,6 +39,11 @@ class Game
       end
     else
       generate_board.create_secret
+      8.times do
+        board.computer_place_color
+        board.assesment
+        puts board.show_board
+      end
     end
   end
 

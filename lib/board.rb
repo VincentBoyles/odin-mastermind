@@ -102,6 +102,16 @@ class Board
     self.row += 1
   end
 
+  def computer_place_color
+    cell = 0
+    4.times do
+      puts "Enter only a number from 1 to 6 for a color to be placed on gameboard row[#{row + 1}] cell[#{cell + 1}]."
+      color_cords[row][cell] = ['BLU'.blue, 'GRE'.green, 'CYA'.cyan, 'RED'.red, 'MAG'.magenta, 'YEL'.yellow].sample
+      cell += 1
+    end
+    self.row += 1
+  end
+
   def assesment
     cell = 0
     color_cords[row - 1].each_with_index do |peg, index|
