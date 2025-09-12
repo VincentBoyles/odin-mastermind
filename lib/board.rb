@@ -65,6 +65,22 @@ class Board
     end
   end
 
+  def computer_place_color
+    colors = ['BLU'.blue, 'GRE'.green, 'CYA'.cyan, 'RED'.red, 'MAG'.magenta, 'YEL'.yellow]
+    color_cords[row].each_with_index do |cords, index|
+      color_cords[row][index] = if row > 1
+                                  if hint_cords[row - 1][index] == 'O'.green
+                                    color_cords[row - 1][index]
+                                  else
+                                    colors.sample
+                                  end
+                                else
+                                  colors.sample
+                                end
+    end
+    self.row += 1
+  end
+
   def choose_color
     input = 0
     until [1, 2, 3, 4, 5, 6].include?(input)
@@ -102,26 +118,17 @@ class Board
     self.row += 1
   end
 
-  def computer_place_color
-    cell = 0
-    4.times do
-      puts "Enter only a number from 1 to 6 for a color to be placed on gameboard row[#{row + 1}] cell[#{cell + 1}]."
-      color_cords[row][cell] = ['BLU'.blue, 'GRE'.green, 'CYA'.cyan, 'RED'.red, 'MAG'.magenta, 'YEL'.yellow].sample
-      cell += 1
-    end
-    self.row += 1
-  end
-
   def assesment
     cell = 0
     color_cords[row - 1].each_with_index do |peg, index|
-      if peg == code[index]
-        hint_cords[row - 1][cell] = 'O'.green
-        cell += 1
-      elsif code.include?(peg)
-        hint_cords[row - 1][cell] = 'O'.red
-        cell += 1
-      end
+      hint_cords[row - 1][cell] = if peg == code[index]
+                                    'O'.green
+                                  elsif code.include?(peg)
+                                    'O'.red
+                                  else
+                                    '+'
+                                  end
+      cell += 1
     end
   end
 end

@@ -37,6 +37,7 @@ class Game
         board.assesment
         puts board.show_board
       end
+      puts board.code
     else
       generate_board.create_secret
       8.times do
