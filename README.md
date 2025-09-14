@@ -50,9 +50,9 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 3. If you’re the Code Maker, enter a sequence of 4 colors using numbers 1–6.
 4. If you’re the Code Breaker, try to guess the computer’s secret code.
 5. After each guess, hints will be displayed:
-   - Green O → Correct color in correct position
-   - Red O → Correct color in wrong position
-   - + → Incorrect color
+   - ✅ Green O → Correct color in correct position
+   - 🔴 Red O → Correct color in wrong position
+   - ➕ + → Incorrect color
 6. You have 8 attempts to guess the code before the game ends.
 
 ---
