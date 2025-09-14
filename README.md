@@ -1,4 +1,4 @@
-MASTER MIND (Ruby) 🎨
+🎨MASTER MIND (Ruby) 
 =====================
 
 A command-line implementation of the classic Mastermind code-breaking game 
