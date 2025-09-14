@@ -31,16 +31,21 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 ## 🛠 Installation & Usage
 
 1. Clone the repository:
+   ```
    git clone https://github.com/your-username/mastermind-ruby.git
    cd mastermind-ruby
+   ```
 
 2. Install dependencies:
+   ```
    bundle install
    (Requires the `colorize` and `debug` gems. Development also uses `rubocop`.)
-
+   ```
+   
 3. Run the game:
+   ```
    ruby main.rb
-
+   ```
 ---
 
 ## 🧑‍💻 How to Play
@@ -78,8 +83,29 @@ Create your guess using numbers 1–6:
 5 for MAGENTA
 6 for YELLOW
 > 1
+Create your guess using numbers 1–6:
+1 for BLUE
+2 for GREEN
+3 for CYAN
+4 for RED
+5 for MAGENTA
+6 for YELLOW
 > 4
+Create your guess using numbers 1–6:
+1 for BLUE
+2 for GREEN
+3 for CYAN
+4 for RED
+5 for MAGENTA
+6 for YELLOW
 > 6
+Create your guess using numbers 1–6:
+1 for BLUE
+2 for GREEN
+3 for CYAN
+4 for RED
+5 for MAGENTA
+6 for YELLOW
 > 3
 
       -----------------------------------------
