@@ -1,69 +1,64 @@
-🎨MASTER MIND (Ruby) 
-=====================
+# 🎯 Mastermind (Ruby)
 
-A command-line implementation of the classic Mastermind code-breaking game 
-built in Ruby. Play as the Code Maker or Code Breaker against a computer opponent.
+A simple command-line implementation of the classic Mastermind code-breaking game built in Ruby.  
+Play as a Code Maker or Code Breaker against a computer opponent.
 
+---
 
-FEATURES ✨
-----------
-- Human vs Computer gameplay
-- Role selection: Code Maker or Code Breaker
-- Colorized CLI output (colorize gem)
-- Feedback pegs to guide guesses:
-    🟢 Green O = Correct color in the correct position
-    🔴 Red O   = Correct color but wrong position
-    ➕ Plus    = Incorrect color
-- Automatic code generation and guessing by the computer
-- Reveals the secret code at the end of the game
+## ✨ Features
 
+- Human vs. Computer gameplay
+- Interactive CLI with colorized output (`colorize` gem)
+- Choose to play as Code Maker or Code Breaker
+- Input validation for player names and role selection
+- Automatic computer code generation and guessing
+- Win detection with feedback (O = correct position, red O = correct color wrong place, + = incorrect)
 
-PROJECT STRUCTURE 📂
---------------------
+---
+
+## 📂 Project Structure
+
 .
 ├── main.rb              # Entry point to start the game
 └── lib/
-    ├── game.rb          # Game flow and logic
-    ├── board.rb         # Board rendering and code logic
+    ├── game.rb          # Game logic and flow
+    ├── board.rb         # Board representation and rules
     ├── players.rb       # Human player class
     └── computer.rb      # Computer player class
 
+---
 
-INSTALLATION & USAGE 🛠
------------------------
+## 🛠 Installation & Usage
+
 1. Clone the repository:
    git clone https://github.com/your-username/mastermind-ruby.git
    cd mastermind-ruby
 
 2. Install dependencies:
    bundle install
-   (Make sure you have the 'colorize', 'rubocop', and 'debug' gems installed)
+   (Requires the `colorize` and `debug` gems. Development also uses `rubocop`.)
 
 3. Run the game:
    ruby main.rb
 
+---
 
-HOW TO PLAY 🧑‍💻
-----------------
+## 🧑‍💻 How to Play
+
 1. Enter your name.
-2. Choose your role:
-   - 1 for Code Breaker
-   - 2 for Code Maker
+2. Choose whether to play as Code Maker (create a secret code) or Code Breaker (guess the code).
+3. If you’re the Code Maker, enter a sequence of 4 colors using numbers 1–6.
+4. If you’re the Code Breaker, try to guess the computer’s secret code.
+5. After each guess, hints will be displayed:
+   - Green O → Correct color in correct position
+   - Red O → Correct color in wrong position
+   - + → Incorrect color
+6. You have 8 attempts to guess the code before the game ends.
 
-3. If you are the Code Maker:
-   - Create a secret code using 4 colors (numbers 1–6).
-   - The computer will attempt to guess it in 8 rounds.
+---
 
-4. If you are the Code Breaker:
-   - Try to guess the computer’s secret code in 8 rounds.
-   - Use numbers 1–6 to place colors on the board.
+## 📜 Example Game Flow
 
-5. The game ends when either the code is broken or all attempts are used.
-6. At the end, the secret code is revealed.
-
-
-EXAMPLE GAME FLOW 📜
---------------------
 -------------------------------------------
 Please enter your name:
 > Alice
@@ -75,31 +70,44 @@ Alice choose to be Code Breaker!
 Computer choose to be Code Maker!
 -------------------------------------------
 
-Enter only a number from 1 to 6 for a color to be placed on gameboard row[1] cell[1].
+Create your guess using numbers 1–6:
+1 for BLUE
+2 for GREEN
+3 for CYAN
+4 for RED
+5 for MAGENTA
+6 for YELLOW
+> 1
 > 4
-Enter only a number from 1 to 6 for a color to be placed on gameboard row[1] cell[2].
-> 2
-...
+> 6
+> 3
 
------------------------------------------
-                MASTERMIND
------------------------------------------
-O + |     BLU     RED     YEL     GRE
------------------------------------------
+      -----------------------------------------
+                     MASTERMIND
+      -----------------------------------------
+          |     UNK     UNK     UNK     UNK
+      -----------------------------------------
+      + + |     BLU     RED     YEL     CYA
+      -----------------------------------------
 
+---
 
-CONCEPTS PRACTICED 📚
----------------------
+## 📚 Concepts Practiced
+
 - Object-Oriented Programming (OOP)
-- Class composition (Game, Board, Players, Computer)
-- User input handling and validation
+- Class composition (Game, Board, Players)
+- User input handling & validation
 - Conditional logic for win/loss detection
-- Randomized computer choices
+- Randomized computer guessing and code generation
 
+---
 
-LICENSE 📄
-----------
-This project is licensed under the MIT License.
-You may use, modify, and share it for learning or personal projects.
+## 📄 License
+
+This project is licensed for educational purposes only.  
+You may use, modify, and share it for learning or personal projects.  
+Commercial use requires explicit permission.
+
+---
 
 Made with 💎 Ruby for learning and fun!
