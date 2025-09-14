@@ -17,7 +17,7 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 ---
 
 ## 📂 Project Structure
-
+```
 .
 ├── main.rb              # Entry point to start the game
 └── lib/
@@ -25,7 +25,7 @@ Play as a Code Maker or Code Breaker against a computer opponent.
     ├── board.rb         # Board representation and rules
     ├── players.rb       # Human player class
     └── computer.rb      # Computer player class
-
+```
 ---
 
 ## 🛠 Installation & Usage
@@ -58,7 +58,7 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 ---
 
 ## 📜 Example Game Flow
-
+```
 -------------------------------------------
 Please enter your name:
 > Alice
@@ -89,7 +89,7 @@ Create your guess using numbers 1–6:
       -----------------------------------------
       + + |     BLU     RED     YEL     CYA
       -----------------------------------------
-
+```
 ---
 
 ## 📚 Concepts Practiced
@@ -98,7 +98,7 @@ Create your guess using numbers 1–6:
 - Class composition (Game, Board, Players)
 - User input handling & validation
 - Conditional logic for win/loss detection
-- Randomized computer guessing and code generation
+- Computer guessing and code generation
 
 ---
 
