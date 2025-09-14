@@ -33,19 +33,31 @@ class Game
     if players[0].choice == 'Code Breaker'
       generate_board.computer_secret
       8.times do
-        board.place_color
-        board.assesment
-        puts board.show_board
+        if board.determine_winner?
+          puts 'Code Breaker wins!'
+          break
+        else
+          board.place_color
+          board.assesment
+          puts board.show_board
+        end
       end
-      puts board.code
     else
       generate_board.create_secret
       8.times do
-        board.computer_place_color
-        board.assesment
-        puts board.show_board
+        if board.determine_winner?
+          puts 'Code Breaker wins!'
+          break
+        else
+          board.computer_place_color
+          board.assesment
+          puts board.show_board
+        end
       end
     end
+    board.reveal_secret
+    puts board.show_board
+    puts 'Code Maker wins!' unless board.determine_winner?
   end
 
   def game_start
@@ -57,6 +69,3 @@ class Game
     begin_decoding
   end
 end
-
-game1 = Game.new
-game1.game_start

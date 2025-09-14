@@ -65,6 +65,19 @@ class Board
     end
   end
 
+  def reveal_secret
+    secret_cords.clear
+    self.secret_cords = code
+  end
+
+  def determine_winner?
+    hint_cords[row - 1].all? { |cords| cords == 'O'.green }
+  end
+
+  def determine_loser?
+    !determine_winner?
+  end
+
   def computer_place_color
     colors = ['BLU'.blue, 'GRE'.green, 'CYA'.cyan, 'RED'.red, 'MAG'.magenta, 'YEL'.yellow]
     color_cords[row].each_with_index do |cords, index|
