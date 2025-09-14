@@ -1,63 +1,105 @@
-MASTERMIND (Ruby CLI Game) 🎨🧩
-===============================
+MASTER MIND (Ruby) 🎨
+=====================
 
 A command-line implementation of the classic Mastermind code-breaking game 
-written in Ruby. Players can take the role of either Code Maker or Code Breaker, 
-competing against the computer in an 8-round battle of logic and deduction.
+built in Ruby. Play as the Code Maker or Code Breaker against a computer opponent.
 
 
 FEATURES ✨
 ----------
-- 👤 Human vs 🤖 Computer gameplay
-- 🎭 Choice of role: Code Maker or Code Breaker
-- 🎨 Colorized CLI output (using 'colorize' gem)
-- ✅ Win/Lose detection with feedback pegs
-- 🔓 Reveals secret code at the end of each match
+- Human vs Computer gameplay
+- Role selection: Code Maker or Code Breaker
+- Colorized CLI output (colorize gem)
+- Feedback pegs to guide guesses:
+    🟢 Green O = Correct color in the correct position
+    🔴 Red O   = Correct color but wrong position
+    ➕ Plus    = Incorrect color
+- Automatic code generation and guessing by the computer
+- Reveals the secret code at the end of the game
+
 
 PROJECT STRUCTURE 📂
 --------------------
-mastermind-ruby/
-│-- main.rb          -> Entry point
-│-- lib/
-│   ├── board.rb     -> Board logic and rendering
-│   ├── computer.rb  -> Computer player behavior
-│   ├── game.rb      -> Game flow and logic
-│   └── players.rb   -> Human player logic
-│-- Gemfile          -> Dependencies
+.
+├── main.rb              # Entry point to start the game
+└── lib/
+    ├── game.rb          # Game flow and logic
+    ├── board.rb         # Board rendering and code logic
+    ├── players.rb       # Human player class
+    └── computer.rb      # Computer player class
 
-INSTALLATION ⚙️
----------------
+
+INSTALLATION & USAGE 🛠
+-----------------------
 1. Clone the repository:
-   git clone https://github.com/yourusername/mastermind-ruby.git
+   git clone https://github.com/your-username/mastermind-ruby.git
    cd mastermind-ruby
 
 2. Install dependencies:
    bundle install
-   (or manually run: gem install colorize rubocop)
+   (Make sure you have the 'colorize', 'rubocop', and 'debug' gems installed)
 
-
-HOW TO PLAY ▶️
---------------
-1. Start the game:
+3. Run the game:
    ruby main.rb
 
-2. ✍️ Enter your name.
 
-3. 🎭 Choose your role:
-   - 1️⃣ for Code Breaker
-   - 2️⃣ for Code Maker
+HOW TO PLAY 🧑‍💻
+----------------
+1. Enter your name.
+2. Choose your role:
+   - 1 for Code Breaker
+   - 2 for Code Maker
 
-4. Gameplay depends on your role:
-   - 🧑‍🎨 Code Maker: Create a secret 4-color code for the computer to guess.
-   - 🕵️ Code Breaker: Try to guess the computer’s secret code within 8 attempts.
+3. If you are the Code Maker:
+   - Create a secret code using 4 colors (numbers 1–6).
+   - The computer will attempt to guess it in 8 rounds.
 
-5. Board symbols:
-   🟢 O = Correct color in the correct position
-   🔴 O = Correct color but in the wrong position
-   ➕  = Incorrect color
+4. If you are the Code Breaker:
+   - Try to guess the computer’s secret code in 8 rounds.
+   - Use numbers 1–6 to place colors on the board.
 
-LICENSE 📜
+5. The game ends when either the code is broken or all attempts are used.
+6. At the end, the secret code is revealed.
+
+
+EXAMPLE GAME FLOW 📜
+--------------------
+-------------------------------------------
+Please enter your name:
+> Alice
+Would you like to be the Code Maker or Code Breaker?
+Enter 1 for Code Breaker
+Enter 2 for Code Maker
+> 1
+Alice choose to be Code Breaker!
+Computer choose to be Code Maker!
+-------------------------------------------
+
+Enter only a number from 1 to 6 for a color to be placed on gameboard row[1] cell[1].
+> 4
+Enter only a number from 1 to 6 for a color to be placed on gameboard row[1] cell[2].
+> 2
+...
+
+-----------------------------------------
+                MASTERMIND
+-----------------------------------------
+O + |     BLU     RED     YEL     GRE
+-----------------------------------------
+
+
+CONCEPTS PRACTICED 📚
+---------------------
+- Object-Oriented Programming (OOP)
+- Class composition (Game, Board, Players, Computer)
+- User input handling and validation
+- Conditional logic for win/loss detection
+- Randomized computer choices
+
+
+LICENSE 📄
 ----------
 This project is licensed under the MIT License.
-----------
+You may use, modify, and share it for learning or personal projects.
+
 Made with 💎 Ruby for learning and fun!
