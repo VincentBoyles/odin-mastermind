@@ -11,7 +11,7 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 - Interactive CLI with colorized output (`colorize` gem)
 - Choose to play as Code Maker or Code Breaker
 - Input validation for player names and role selection
-- Automatic computer code generation and guessing
+- Automatic computer code generation and guessingr
 - Win detection with feedback (green O = correct position, red O = correct color wrong place, + = incorrect)
 
 ---
@@ -32,8 +32,8 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/mastermind-ruby.git
-   cd mastermind-ruby
+   git clone https://github.com/your-username/odin-mastermind.git
+   cd odin-hangman
    ```
 
 2. Install dependencies:
