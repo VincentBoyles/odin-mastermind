@@ -12,7 +12,7 @@ Play as a Code Maker or Code Breaker against a computer opponent.
 - Choose to play as Code Maker or Code Breaker
 - Input validation for player names and role selection
 - Automatic computer code generation and guessing
-- Win detection with feedback (O = correct position, red O = correct color wrong place, + = incorrect)
+- Win detection with feedback (green O = correct position, red O = correct color wrong place, + = incorrect)
 
 ---
 
